@@ -1,23 +1,22 @@
 <template>
-  <div class="main__header">
-    <div class="row">
-      <div class="col-md-12">
+  <b-row class="main__header">
+    <b-row>
+      <b-col>
         <h1>{{ company.title }}</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
         <b-nav>
           <router-link to="/">Меню</router-link> |
           <router-link to="/about">О нас</router-link>
         </b-nav>
-      </div>
-      <div class="col-sm-6">
+      </b-col>
+      <b-col>
         <MenuCart />
-      </div>
-    </div>
-  </div>
-
+      </b-col>
+    </b-row>
+  </b-row>
 </template>
 
 <script>

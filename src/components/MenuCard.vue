@@ -65,11 +65,16 @@ export default {
   .card__image img {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    width: 100%;
   }
 
   .card__title, .card__description {
     padding-right: 10px;
     padding-left: 10px;
+  }
+
+  .card__title {
+    font-size: 18px;
   }
 
   .card__description {
@@ -91,6 +96,7 @@ export default {
     border-radius: 20px;
     padding: 10px 17px;
     width: 100%;
+    font-size: 20px;
   }
 
 </style>

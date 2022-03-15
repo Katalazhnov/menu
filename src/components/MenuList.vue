@@ -1,5 +1,5 @@
 <template>
-  <b-row>
+  <b-row cols="2" cols-xs="2" cols-sm="2" cols-md="3" cols-lg="4">
     <b-col v-for="(product, index) in items"
            :item="product"
            :index="index"

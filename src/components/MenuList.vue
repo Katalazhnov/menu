@@ -1,20 +1,20 @@
 <template>
-  <b-list-group>
-    <MenuListElement v-for="(product, index) in items"
-                     :item="product"
-                     :index="index"
-                     :key="product.id"
-                      :product="product"/>
-
-  </b-list-group>
+  <b-row>
+    <b-col v-for="(product, index) in items"
+           :item="product"
+           :index="index"
+           :key="product.id">
+      <MenuCard :product="product"/>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
-import MenuListElement from "@/components/MenuListElement";
+import MenuCard from "@/components/MenuCard";
 import {mapGetters} from "vuex";
 export default {
   name: "MenuList",
-  components: {MenuListElement},
+  components: {MenuCard},
   data() {
     return {
       items: [],
@@ -45,5 +45,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .col {
+    margin-bottom: 20px;
+  }
 </style>

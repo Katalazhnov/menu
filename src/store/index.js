@@ -9,10 +9,14 @@ export default new Vuex.Store({
       title: 'Название компании'
     },
     products: [
-      {id: 1, article: 123, title: 'Кофе', 'description': 'Описание товара 1', price: 102.5, category: 2},
-      {id: 2, article: 14423, title: 'Мороженное', 'description': 'Описание товара 2', price: 90, category: 3},
-      {id: 3, article: 1623, title: 'Колбаса', 'description': 'Описание товара 3', price: 123, category: 4},
-      {id: 4, article: 1223, title: 'Варенье', 'description': 'Описание товара 4', price: 45, category: 3}
+      {id: 1, article: 123, title: 'Кофе', 'description': 'Описание товара 1', price: 102.5, category: 2, volume: 450, metric: 'мл.'},
+      {id: 2, article: 14423, title: 'Мороженное', 'description': 'Описание товара 2', price: 90, category: 3, volume: 0.2, metric: 'кг.'},
+      {id: 3, article: 1623, title: 'Колбаса', 'description': 'Описание товара 3', price: 123, category: 4, volume: 1, metric: 'кг.'},
+      {id: 4, article: 1223, title: 'Варенье', 'description': 'Описание товара 4', price: 45, category: 3, volume: 0.5, metric: 'л.'},
+      {id: 5, article: 12344, title: 'Молоко', 'description': 'Описание товара 1', price: 102.5, category: 2, volume: 450, metric: 'мл.'},
+      {id: 6, article: 144523, title: 'Сосиски', 'description': 'Описание товара 2', price: 90, category: 3, volume: 0.2, metric: 'кг.'},
+      {id: 7, article: 16223, title: 'Чай', 'description': 'Описание товара 3', price: 123, category: 4, volume: 1, metric: 'кг.'},
+      {id: 8, article: 12253, title: 'Кунжут', 'description': 'Описание товара 4', price: 45, category: 3, volume: 0.5, metric: 'л.'}
     ],
     categories: [
       {id: 2, title: 'Напитки'},

@@ -1,8 +1,10 @@
 <template>
   <div class="menu__cart">
-    <router-link v-if="cartLength > 0" to="/cart">
-      <b-button variant="primary">Корзина {{ cartLength }}</b-button>
-    </router-link>
+    <transition name="fade">
+      <router-link v-if="cartLength > 0" to="/cart">
+        <b-button variant="primary">Корзина {{ cartLength }}</b-button>
+      </router-link>
+    </transition>
   </div>
 </template>
 
@@ -39,5 +41,12 @@ export default {
     background-color: #252423;
     color: white !important;
     border: 2px solid #747269 !important;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
   }
 </style>

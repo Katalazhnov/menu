@@ -1,7 +1,15 @@
 <template>
   <div class="menu__card">
     <div class="card__image">
-      <img src="https://picsum.photos/300/300/?image=41">
+      <transition name="fade">
+      <div v-if="count > 0" class="card__summary">
+        <div>
+          <span class="count">{{ count }}</span>
+          <span class="summa">{{ summa }} ₽</span>
+        </div>
+      </div>
+      </transition>
+      <img src="https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000">
     </div>
     <div class="card__title">
       {{ product.title }}
@@ -39,6 +47,9 @@ export default {
   },
   computed: {
     ...mapGetters(['cart', 'cartLength']),
+    summa() {
+      return this.count * this.product.price;
+    }
   },
   watch: {
     cartLength() {
@@ -60,6 +71,28 @@ export default {
 
   .card__image {
     margin-bottom: 20px;
+    position: relative;
+  }
+
+  .card__image .card__summary {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.6);
+  }
+
+  .card__image .card__summary span {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .card__image .card__summary span.count {
+    font-size: 40px;
+    font-weight: 700;
   }
 
   .card__image img {
@@ -97,6 +130,13 @@ export default {
     padding: 10px 17px;
     width: 100%;
     font-size: 20px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
   }
 
 </style>

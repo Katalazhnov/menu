@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Итого {{ cartSumma }}</h4>
+    <h4>{{ cartSumma }}</h4>
   </div>
 </template>
 

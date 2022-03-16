@@ -15,8 +15,13 @@
           <CartTableSumma :data="item" />
         </b-col>
       </b-row>
-      <CartSummary />
-      <router-link to="/order">Оформить заказ</router-link>
+      <b-row class="cart__summary">
+        <b-col align="right">
+          <router-link to="/order">
+            <b-button size="lg" variant="primary">Оформить заказ на {{ cartSumma }} ₽</b-button>
+          </router-link>
+        </b-col>
+      </b-row>
     </div>
     <div v-else>
       <h5>Корзина пуста</h5>
@@ -29,13 +34,12 @@
 import {mapGetters} from "vuex";
 import CartTableCount from "@/components/CartTableCount";
 import CartTableSumma from "@/components/CartTableSumma";
-import CartSummary from "@/components/CartSummary";
 
 export default {
   name: "CartTable",
-  components: {CartSummary, CartTableSumma, CartTableCount},
+  components: {CartTableSumma, CartTableCount},
   computed: {
-    ...mapGetters(['cart', 'products', 'cartLength']),
+    ...mapGetters(['cart', 'products', 'cartLength', 'cartSumma']),
   },
   mounted() {
     this.initCount();
@@ -70,9 +74,13 @@ export default {
     color: white;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid white;
+    border-top: 1px solid white;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .cart__row:nth-child(1) {
+    border: none !important;
   }
 
   .cart__image {
@@ -83,7 +91,7 @@ export default {
   }
 
   .cart__title {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .cart__count {
@@ -93,6 +101,17 @@ export default {
 
   .cart__summa, .cart__count {
     font-size: 25px;
+  }
+
+  .cart__summary {
+    padding-top: 20px;
+  }
+
+  .cart__summary .btn {
+    background-color: white;
+    color: #000000;
+    border: none;
+    border-radius: 15px;
   }
 
 </style>

@@ -2,7 +2,10 @@
   <div class="menu__cart">
     <transition name="fade">
       <router-link v-if="cartLength > 0" to="/cart">
-        <b-button variant="primary">Корзина {{ cartLength }}</b-button>
+        <b-button id="popover-target-1" variant="primary">Корзина {{ cartLength }}</b-button>
+        <b-popover target="popover-target-1" triggers="hover" placement="left">
+          {{ cartLength }} товаров на {{ cartSumma }} ₽
+        </b-popover>
       </router-link>
     </transition>
   </div>
@@ -14,7 +17,7 @@ import {mapGetters} from "vuex";
 export default {
   name: "MenuCart",
   computed: {
-    ...mapGetters(['cartLength']),
+    ...mapGetters(['cartLength', 'cartSumma']),
   },
 }
 </script>

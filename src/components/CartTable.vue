@@ -1,5 +1,6 @@
 <template>
   <div class="cart__table">
+    <h3 class="header">Заказ</h3>
     <div v-if="cartLength > 0">
       <b-row class="cart__row" v-for="item in items" :key="item.id">
         <b-col cols="2" class="cart__image">
@@ -23,7 +24,7 @@
         </b-col>
       </b-row>
     </div>
-    <div v-else>
+    <div class="cart__empty" v-else>
       <h5>Корзина пуста</h5>
     </div>
   </div>
@@ -112,6 +113,15 @@ export default {
     color: #000000;
     border: none;
     border-radius: 15px;
+  }
+
+  .cart__empty {
+    font-size: 30px;
+    color: white;
+  }
+
+  .header {
+    color: white;
   }
 
 </style>

@@ -1,16 +1,27 @@
 <template>
   <div class="order__view">
-    <h3>Оформление заказа</h3>
-    <label>Точка самовывоза</label>
-    <b-form-select :disabled="disabled" @change="setOrderPoint" :options="points" :value="order.point"/>
-    <hr>
-    <label>Имя</label>
-    <b-input :disabled="disabled" @input="setOrderName" :value="order.name"/>
-    <label>Телефон</label>
-    <b-input :disabled="disabled" @input="setOrderPhone" :value="order.phone"/>
-    <label>Комментарий к заказу</label>
-    <b-textarea :disabled="disabled" @input="setOrderDescription" :value="order.description" rows="10"/>
-    <b-button v-if="cartLength > 0" @click="sendOrder">Оформить</b-button>
+    <b-row>
+      <b-col>
+        <h3>Оформление заказа</h3>
+      </b-col>
+    </b-row>
+    <b-row >
+      <b-col class="order__form">
+        <label>Точка самовывоза</label>
+        <b-form-select :disabled="disabled" @change="setOrderPoint" :options="points" :value="order.point"/><br>
+        <label>Имя</label>
+        <b-input :disabled="disabled" @input="setOrderName" :value="order.name"/>
+        <label>Телефон</label>
+        <b-input :disabled="disabled" @input="setOrderPhone" :value="order.phone"/>
+        <label>Комментарий к заказу</label>
+        <b-textarea :disabled="disabled" @input="setOrderDescription" :value="order.description" rows="10"/>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col align="right">
+        <b-button  variant="primary" size="lg" v-if="cartLength > 0" @click="sendOrder">Оформить</b-button>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -32,7 +43,11 @@ export default {
 </script>
 
 <style scoped>
-  .order__view {
+  .order__view h3{
+    color: white;
+  }
+  .order__form {
     background-color: white;
+    border-radius: 15px;
   }
 </style>

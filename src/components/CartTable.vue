@@ -1,14 +1,20 @@
 <template>
   <div class="cart__table">
     <div v-if="cartLength > 0">
-      <b-table sticky-header small bordered hover :items="items" :fields="fields">
-        <template v-slot:cell(count)="data">
-          <CartTableCount :data="data.item" />
-        </template>
-        <template v-slot:cell(summa)="data">
-          <CartTableSumma :data="data" />
-        </template>
-      </b-table>
+      <b-row class="cart__row" v-for="item in items" :key="item.id">
+        <b-col cols="2" class="cart__image">
+          <b-img-lazy :src="item.image"/>
+        </b-col>
+        <b-col class="cart__title">
+          <span>{{ item.title }}</span>
+          <b-col class="cart__count">
+            <CartTableCount :data="item" />
+          </b-col>
+        </b-col>
+        <b-col cols="3"  align="center" class="cart__summa">
+          <CartTableSumma :data="item" />
+        </b-col>
+      </b-row>
       <CartSummary />
       <router-link to="/order">Оформить заказ</router-link>
     </div>
@@ -54,40 +60,39 @@ export default {
   data() {
     return {
       items: [],
-      fields: [
-        {
-          key: 'article',
-          label: 'Артикул',
-          sortable: true
-        },
-        {
-          key: 'title',
-          label: 'Название',
-          sortable: true
-        },
-        {
-          key: 'price',
-          label: 'Цена',
-          sortable: true,
-        },
-        {
-          key: 'count',
-          label: 'Количество',
-          sortable: true,
-        },
-        {
-          key: 'summa',
-          label: 'Сумма',
-          sortable: true,
-        }
-      ],
     }
   }
 }
 </script>
 
 <style scoped>
-  .cart__table {
-    background-color: white;
+  .cart__row {
+    color: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
+
+  .cart__image {
+    padding: 0;
+  }
+  .cart__image img {
+    width: 100%;
+  }
+
+  .cart__title {
+    font-size: 15px;
+  }
+
+  .cart__count {
+    padding-top: 15px;
+    max-width: 200px;
+  }
+
+  .cart__summa, .cart__count {
+    font-size: 25px;
+  }
+
 </style>

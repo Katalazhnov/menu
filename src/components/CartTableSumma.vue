@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ summa }}
+    {{ summa }} ₽
   </div>
 </template>
 
@@ -21,8 +21,8 @@ export default {
   methods: {
     ...mapActions(['addToCart', 'subFromCart']),
     initSumma() {
-      if (this.cart[this.data.item.id]) {
-        this.summa = this.cart[this.data.item.id] * this.data.item.price;
+      if (this.cart[this.data.id]) {
+        this.summa = this.cart[this.data.id] * this.data.price;
       }
     }
   },

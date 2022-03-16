@@ -9,7 +9,7 @@
         </div>
       </div>
       </transition>
-      <img src="https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000">
+      <b-img-lazy :src="product.image"/>
     </div>
     <div class="card__title">
       {{ product.title }}
@@ -72,6 +72,8 @@ export default {
   .card__image {
     margin-bottom: 20px;
     position: relative;
+    max-width: 301px;
+    height: 241px;
   }
 
   .card__image .card__summary {

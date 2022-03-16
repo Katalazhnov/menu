@@ -6,17 +6,28 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     company: {
-      title: 'Название компании'
+      title: 'Название компании',
+      address: 'Комсомольск-на-Амуре, Ленина 81',
+      time: 'с 10:00 - 18:00',
+      business: {
+        inn: '345678765556',
+        name: 'ИП Иванов Иван Иванович',
+        address: 'Хабаровск, Комсомольская 15'
+      },
+      phones: [
+        { number: '+7 (999) 999-99-99', title: 'Офис', attribute: 79999999999 }
+      ],
+      description: 'Если вам нужно использовать глобальную переменную ymaps отдельно от компонента карт (геокодер и др.), просто импортируйте лоадер. Вы можете задать настройки, описанные выше, а также указать параметр debug (по умолчанию - false). Учтите, что функция загрузчика асинхронная. Вы можете подключить плагин напрямую, используя ссылку https://unpkg.com/vue-yandex-maps (opens new window). Установка будет произведена автоматически при обнаружении Vue JS. Это может быть полезно при использовании Code Pen'
     },
     products: [
-      {id: 1, article: 123, title: 'Кофе', 'description': 'Описание товара 1', price: 102.5, category: 2, volume: 450, metric: 'мл.'},
-      {id: 2, article: 14423, title: 'Мороженное', 'description': 'Описание товара 2', price: 90, category: 3, volume: 0.2, metric: 'кг.'},
-      {id: 3, article: 1623, title: 'Колбаса', 'description': 'Описание товара 3', price: 123, category: 4, volume: 1, metric: 'кг.'},
-      {id: 4, article: 1223, title: 'Варенье', 'description': 'Описание товара 4', price: 45, category: 3, volume: 0.5, metric: 'л.'},
-      {id: 5, article: 12344, title: 'Молоко', 'description': 'Описание товара 1', price: 102.5, category: 2, volume: 450, metric: 'мл.'},
-      {id: 6, article: 144523, title: 'Сосиски', 'description': 'Описание товара 2', price: 90, category: 3, volume: 0.2, metric: 'кг.'},
-      {id: 7, article: 16223, title: 'Чай', 'description': 'Описание товара 3', price: 123, category: 4, volume: 1, metric: 'кг.'},
-      {id: 8, article: 12253, title: 'Кунжут', 'description': 'Описание товара 4', price: 45, category: 3, volume: 0.5, metric: 'л.'}
+      {id: 1, article: 123, title: 'Кофе', 'description': 'Описание товара 1', price: 102.5, category: 2, volume: 450, metric: 'мл.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'},
+      {id: 2, article: 14423, title: 'Мороженное', 'description': 'Описание товара 2', price: 90, category: 3, volume: 0.2, metric: 'кг.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'},
+      {id: 3, article: 1623, title: 'Колбаса', 'description': 'Описание товара 3', price: 123, category: 4, volume: 1, metric: 'кг.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'},
+      {id: 4, article: 1223, title: 'Варенье', 'description': 'Описание товара 4', price: 45, category: 3, volume: 0.5, metric: 'л.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'},
+      {id: 5, article: 12344, title: 'Молоко', 'description': 'Описание товара 1', price: 102.5, category: 2, volume: 450, metric: 'мл.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'},
+      {id: 6, article: 144523, title: 'Сосиски', 'description': 'Описание товара 2', price: 90, category: 3, volume: 0.2, metric: 'кг.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'},
+      {id: 7, article: 16223, title: 'Чай', 'description': 'Описание товара 3', price: 123, category: 4, volume: 1, metric: 'кг.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'},
+      {id: 8, article: 12253, title: 'Кунжут', 'description': 'Описание товара 4', price: 45, category: 3, volume: 0.5, metric: 'л.', image: 'https://img.freepik.com/free-photo/beer-glass-in-front-of-black-background_23-2148098813.jpg?w=2000'}
     ],
     categories: [
       {id: 2, title: 'Напитки'},

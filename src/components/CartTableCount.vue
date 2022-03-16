@@ -1,15 +1,15 @@
 <template>
-  <div class="product__count row">
+  <b-row class="product__count">
     <b-col>
       <b-button @click="subFromCart(data)" class="left" variant="primary">-</b-button>
     </b-col>
-    <b-col>
+    <b-col class="count">
       <span>{{ count }}</span>
     </b-col>
     <b-col>
       <b-button @click="addToCart(data)" class="right" variant="primary">+</b-button>
     </b-col>
-  </div>
+  </b-row>
 </template>
 
 <script>
@@ -49,6 +49,9 @@ export default {
 .product__count {
   display: flex;
   align-items: center;
+}
+.count {
+  text-align: center;
 }
 .product__count .btn-primary {
     background-color: #252423;

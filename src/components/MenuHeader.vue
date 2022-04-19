@@ -12,7 +12,7 @@
             <b-button variant="primary">Меню</b-button>
           </router-link>
           <router-link to="/about">
-            <b-button variant="primary">О нас</b-button>
+            <b-button variant="primary">О наЦ</b-button>
           </router-link>
         </div>
       </b-col>
